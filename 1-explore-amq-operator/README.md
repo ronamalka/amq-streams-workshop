@@ -16,7 +16,7 @@ Explore and understand the AMQ operator, In this exercise we will learn to:
 
 # Diagram
 
-![](https://access.redhat.com/webassets/avalon/d/Red_Hat_AMQ-7.6-AMQ_Streams_on_OpenShift_Overview-en-US/images/541e70584b3fc4c183e80851b0f4304c/topic-operator.png)
+![](https://access.redhat.com/webassets/avalon/d/Red_Hat_AMQ-7.7-Deploying_and_Upgrading_AMQ_Streams_on_OpenShift-en-US/images/320e68d6e4b4080e7469bea094ec8fbf/operators.png)
 
 Make sure you connect to the cluster before starting this exercise! 
 
