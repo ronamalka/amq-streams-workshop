@@ -108,10 +108,10 @@ Validate that the created Kafka topic was created successfuly by using `get kt` 
 $ oc get kt
                                                                                 
 NAME       PARTITIONS   REPLICATION FACTOR
-my-topic   12           3
+my-topic   10           3
 ```
 
-The Kafka topic was created with 12 parititions and replication factor of 3. 
+The Kafka topic was created with 10 parititions and replication factor of 3. 
 
 ### Pause to Think  
 
