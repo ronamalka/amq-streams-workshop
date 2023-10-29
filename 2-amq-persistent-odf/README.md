@@ -34,29 +34,41 @@ metadata:
   name: my-cluster
 spec:
   kafka:
-    version: 2.4.0
-    replicas: 3
-    listeners:
-      plain: {}
-      tls: {}
     config:
       offsets.topic.replication.factor: 3
       transaction.state.log.replication.factor: 3
       transaction.state.log.min.isr: 2
-      log.message.format.version: "2.4"
-    storage:
-      type: persistent-claim
-      size: 20Gi
-      deleteClaim: true
-  zookeeper:
-    replicas: 3
+      default.replication.factor: 3
+      min.insync.replicas: 2
+      inter.broker.protocol.version: '3.5'
+    authorization:
+      type: simple
     storage:
       type: persistent-claim
       size: 10Gi
       deleteClaim: true
+    listeners:
+      - name: plain
+        port: 9092
+        type: internal
+        tls: false
+      - authentication:
+          type: tls
+        name: tls
+        port: 9093
+        type: internal
+        tls: true
+    version: 3.5.0
+    replicas: 3
   entityOperator:
     topicOperator: {}
     userOperator: {}
+  zookeeper:
+    storage:
+      type: persistent-claim
+      size: 5Gi
+      deleteClaim: true
+    replicas: 3
 EOF
 ```
 
