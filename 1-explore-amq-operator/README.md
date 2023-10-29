@@ -44,6 +44,15 @@ Leave the default name for your Kafka cluster and make sure you understand the w
 - What is an ephemeral storage and how it connects to emptyDir?
 - What are requests and limits? how do we control resources with them?
 
+- Make sure you add:
+  -  Kafka.spec.kafka.listeners.tls.authentication = tls
+  -  Kafka.spec.kafka.authorization = simple
+
+When you configure the KafkaUser authentication and authorization mechanisms, ensure they match the equivalent Kafka configuration:
+
+  KafkaUser.spec.authentication matches Kafka.spec.kafka.listeners.*.authentication
+  KafkaUser.spec.authorization matches Kafka.spec.kafka.authorization
+
 Hit the `Create` button in order to complete the installation: 
 
 ![](./pictures/create-kafka-instance.png)
